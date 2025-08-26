@@ -1,0 +1,148 @@
+/* Global styling */
+body {
+    font-family: sans-serif;
+    background-color: #f5f5f5; /* Light gray background */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff; /* Primary blue color */
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #333; /* White background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 100; /* Keep header above other content */
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    font-size: 16px;
+    padding: 10px 15px;
+    display: inline-block;
+  }
+  
+  /* Animation for header elements */
+  nav a:hover {
+    transform: translateY(-5px); /* Lift on hover */
+  }
+  
+  /* Main content styling */
+  main {
+    padding-top: 80px; /* Account for header height */
+    text-align: center;
+  }
+  
+  section {
+    margin: 40px auto;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  /* Animation for main content */
+  section {
+    animation: fadeInUp 1s ease-in-out; /* Fade in from bottom */
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Footer styling */
+  footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  /* Newsletter Subscription Section Styling */
+section {
+  background-color: #f2f2f2; /* Light grey background */
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h3 {
+  color: #333; /* Dark text for heading */
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+section p {
+  color: #666; /* Lighter text for paragraph */
+  margin-bottom: 20px;
+}
+
+form {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 250px; /* Adjust width as needed */
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
