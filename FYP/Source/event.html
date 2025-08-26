@@ -1,0 +1,105 @@
+<!---- <?php
+// Connect to database
+// ...
+
+// Fetch approved events
+$sql = "SELECT * FROM events WHERE status = 'approved'";
+$result = // execute query
+
+// Display events
+while($row = // fetch rows from $result) {
+    echo "<div class='event'>";
+    echo "<h2>" . $row['name'] . "</h2>";
+    echo "<p>Date: " . $row['date'] . "</p>";
+    // ...
+    echo "</div>";
+}
+?>  
+
+PHP code
+<?php
+// Connect to database
+// ...
+
+// Initialize variables for filters
+$name = $_GET['name'] ?? '';
+$date = $_GET['date'] ?? '';
+$venue = $_GET['venue'] ?? '';
+// ...
+
+// Construct SQL query with filters
+$sql = "SELECT * FROM events WHERE status = 'approved'";
+if (!empty($name)) {
+    $sql .= " AND name LIKE '%$name%'";
+}
+if (!empty($date)) {
+    $sql .= " AND date = '$date'";
+}
+if (!empty($venue)) {
+    $sql .= " AND venue LIKE '%$venue%'";
+}
+// ...
+
+$result = // execute query
+
+// Display events
+while ($row = // fetch rows from $result) {
+    echo "<div class='event'>";
+    echo "<h2>" . $row['name'] . "</h2>";
+    echo "<p>Date: " . $row['date'] . "</p>";
+    // ...
+    echo "</div>";
+}
+?>
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upcoming Events</title>
+    <link rel="stylesheet" href="event.css">
+   <!---- <style>
+        /* Basic styling for demonstration */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .filter-form {
+            margin-bottom: 20px;
+        }
+        .event {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style> -->
+</head>
+<body>
+     
+
+    <h1>Upcoming Events</h1>
+
+    <!-- Filter Form -->
+    <div class="filter-form">
+        <form id="filterEvents" method="GET">
+            <input type="text" name="name" placeholder="Event Name">
+            <input type="date" name="date">
+            <input type="text" name="venue" placeholder="Venue">
+            <!-- Add other filters as needed -->
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div id="events">
+        <!-- Events will be loaded here via PHP -->
+    </div>
+
+    <script>
+        document.getElementById('filterEvents').onsubmit = function(e) {
+            e.preventDefault();
+            // You can use AJAX here to send the form data to a PHP script and update the events list without reloading the page.
+        };
+    </script>
+</body>
+</html>
+
